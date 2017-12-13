@@ -1,2 +1,2 @@
 # Baton
-A bare bones moderation bot for Discord
+A robust moderation bot for Discord
