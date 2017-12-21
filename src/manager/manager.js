@@ -25,4 +25,24 @@ module.exports = class Manager {
             result = error;
         }
     }
+    refresh() {
+        let result;
+        try {
+            result = jsonfile.writeFileSync("./src/data/guilds.json", this.client.servers);
+        } catch (error) {
+            console.log(error.toString());
+            result = error;
+        }
+        return result;
+    }
+    get servers() {
+        let result;
+        try {
+            result = jsonfile.readFileSync("./src/data/guilds.json");
+        } catch (error) {
+            console.log(error.toString());
+            result = error;
+        }
+        return result;
+    }
 }
